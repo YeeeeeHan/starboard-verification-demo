@@ -27,10 +27,11 @@ import "@starboardventures/hardhat-verify
 
 ### Method 1: Manually via Starboard FVM explorer UI
 
-1. Visit https://fvm.starboard.ventures/explorer/verifier
+1. Deploy contract on remix and download metadata json file
+   ![Alt text](images/image-4.png)
+2. Visit https://fvm.starboard.ventures/explorer/verifier
    ![Alt text](images/image-1.png)
-
-2. Upload metadata json file and contracts
+3. Upload metadata json file and contracts
    ![Alt text](images/image-3.png)
 
 ### Method 2: Via API
