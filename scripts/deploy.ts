@@ -1,6 +1,6 @@
 import { ethers } from "hardhat";
 
-const contractName = "Token";
+const contractName = "SimpleStorage";
 
 async function deploy() {
   const provider = ethers.provider;

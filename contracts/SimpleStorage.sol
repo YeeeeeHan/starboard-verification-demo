@@ -2,8 +2,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
-
 contract SimpleStorage {
     uint256 private _value;
 
@@ -12,12 +10,6 @@ contract SimpleStorage {
 
     // Stores a new value in the contract
     function store(uint256 value) public {
-        console.log(
-            "[Logged from smart contract] Stored %s value, msg.sender: %s",
-            value,
-            msg.sender
-        );
-
         _value = value;
         emit ValueChanged(value);
     }

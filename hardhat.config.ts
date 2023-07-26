@@ -39,12 +39,12 @@ const config: HardhatUserConfig = {
     },
   },
   starboardConfig: {
-    baseURL: "https://fvm-api.starboard.ventures",
+    baseURL: "https://fvm-calibration-api.starboard.ventures",
     network: "Calibration", // if there's no baseURL, url will depend on the network.  Mainnet || Calibration
   },
   // starboardConfig: {
-  //   baseURL: 'https://fvm-api.starboard.ventures',
-  //   network: 'Mainnet' // if there's no baseURL, url will depend on the network.  Mainnet || Calibration
+  //   baseURL: "https://fvm-api.starboard.ventures",
+  //   network: "Mainnet", // if there's no baseURL, url will depend on the network.  Mainnet || Calibration
   // },
 };
 

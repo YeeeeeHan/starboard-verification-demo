@@ -6,27 +6,29 @@
 yarn install
 ```
 
-2. Add
+2. Add hardhat-verify package
 
 ```bash
 yarn add @starboardventures/hardhat-verify`
 ```
 
-3. add import
+3. Import and use package
 
 ```bash
 import "@starboardventures/hardhat-verify
 ```
 
-### Compilation and deployment
+### Method 1: Manually via Starboard FVM explorer UI
 
-1. Compile. `artifacts`, `cache`, `typechain-types` will be generated
+![Alt text](images/image-1.png)
 
-```bash
-npx hardhat compile
-```
+### Method 2: Via API
 
-### Method 1: Hardhat plugin (cli)
+Refer to docs: https://fvm.starboard.ventures/contract/verify/api-docs
+
+![Alt text](images/image-2.png)
+
+### Method 3: Hardhat plugin (cli)
 
 1. Deploy
 
@@ -36,7 +38,7 @@ npx hardhat run scripts/deploy.ts --network <network>
 # Mainnet: npx hardhat run scripts/deploy.ts --network FilecoinMainnet
 ```
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 2. Verify via CLI
 
@@ -52,7 +54,7 @@ npx hardhat starboard-verify <CONTRACT_NAME> metadata
 # e.g: npx hardhat starboard-verify Token metadata
 ```
 
-### Method 2: Hardhat plugin (script)
+### Method 4: Hardhat plugin (script)
 
 Running the deploy-verify script:
 
@@ -60,24 +62,4 @@ Running the deploy-verify script:
 npx hardhat run scripts/deploy.ts --network <network>
 # Testnet: npx hardhat run scripts/deploy-and-verify.ts --network calibrationnet
 # Mainnet: npx hardhat run scripts/deploy-and-verify.ts --network FilecoinMainnet
-```
-
-### Method 3: FVM API
-
-1. Deploy
-
-```bash
-npx hardhat run scripts/deploy.ts --network <network>
-# Testnet: npx hardhat run scripts/deploy.ts --network calibrationnet
-# Mainnet: npx hardhat run scripts/deploy.ts --network FilecoinMainnet
-```
-
-2. Generate `POST`` request
-
-```bash
-curl --request POST 'https://fvm-calibration-api.starboard.ventures/api/v1/contract/${YourContractAddress}/verify'
---form 'metadata.json=@"artifacts/contracts/Box.sol/Box.json"'
---form 'Box.sol=@"contrats/Box.sol"'
---form 'hardhat/console.sol=@"node_modules/hardhat/console.sol"'
-# --form '@openzeppelin/contracts/token/ERC721/ERC721.sol=@"path/@openzeppelin/contracts/token/ERC721/ERC721.sol"'
 ```
