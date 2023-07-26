@@ -1,6 +1,8 @@
+import {
+  StarboardVerify,
+  generateMetadata,
+} from "@starboardventures/hardhat-verify/dist/src/utils";
 import { ethers } from "hardhat";
-import generateMetadata from "./generate-metadata";
-import verify from "./verify";
 
 const contractName = "Token";
 
@@ -18,11 +20,19 @@ async function deployAndVerify() {
      - Transaction: ${contract.deployTransaction.hash}`
   );
 
+  // Verify contract
+  console.log("Verifying...");
+  const verify = new StarboardVerify({
+    // network: 'Mainnet',
+    network: "Calibration",
+    contractName: contractName,
+    contractAddress: contract.address,
+  });
+  await verify.verify();
+
+  // Generate metadata (Optional)
   console.log("Generating Metadata...");
   await generateMetadata(contractName);
-
-  console.log("Verifying...");
-  await verify(contractName, contract.address);
 }
 
 deployAndVerify()
