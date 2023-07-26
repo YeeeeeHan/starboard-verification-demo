@@ -1,5 +1,5 @@
 declare global {
-  declare namespace NodeJS {
+  namespace NodeJS {
     interface ProcessEnv {
       PRIVATE_KEY: string;
       ETHERSCAN_API_KEY: string;
