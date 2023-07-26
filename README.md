@@ -18,9 +18,20 @@ yarn add @starboardventures/hardhat-verify`
 import "@starboardventures/hardhat-verify
 ```
 
+### Contract Verification Methods
+
+1. [Manually via Starboard FVM explorer UI](#method-1-manually-via-starboard-fvm-explorer-ui)
+2. [Via Starboard API](#method-2-via-api)
+3. [Hardhat plugin - cli](#method-3-hardhat-plugin-cli)
+4. [Hardhat plugin - script](#method-4-hardhat-plugin-script)
+
 ### Method 1: Manually via Starboard FVM explorer UI
 
-![Alt text](images/image-1.png)
+1. Visit https://fvm.starboard.ventures/explorer/verifier
+   ![Alt text](images/image-1.png)
+
+2. Upload metadata json file and contracts
+   ![Alt text](images/image-3.png)
 
 ### Method 2: Via API
 
@@ -29,6 +40,8 @@ Refer to docs: https://fvm.starboard.ventures/contract/verify/api-docs
 ![Alt text](images/image-2.png)
 
 ### Method 3: Hardhat plugin (cli)
+
+Refer to package Readme: https://www.npmjs.com/package/@starboardventures/hardhat-verify
 
 1. Deploy
 
