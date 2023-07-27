@@ -9,7 +9,7 @@ yarn install
 2. Add hardhat-verify package
 
 ```bash
-yarn add @starboardventures/hardhat-verify`
+yarn add @starboardventures/hardhat-verify
 ```
 
 3. Import and use package
